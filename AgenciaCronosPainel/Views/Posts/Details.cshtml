@@ -1,0 +1,39 @@
+﻿@model AgenciaCronosPainel.Models.Posts
+
+<div>
+    <h4>Posts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.Label("Número")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.Label("Título")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.Label("Descritivo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descritivo)
+        </dd>
+
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

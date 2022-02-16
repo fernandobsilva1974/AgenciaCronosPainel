@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<AgenciaCronosPainel.Models.Posts>
+
+@{
+    ViewBag.Title = "Posts";
+}
+
+<h2>Posts</h2>
+
+<p>
+    @Html.ActionLink("Novo Post", "Create")
+</p>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.Label("Número")
+        </th>
+        <th>
+            @Html.Label("Título")
+        </th>
+        <th>
+            @Html.Label("Descritivo")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Numero)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Titulo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Descritivo)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+    </td>
+</tr>
+    }
+
+</table>

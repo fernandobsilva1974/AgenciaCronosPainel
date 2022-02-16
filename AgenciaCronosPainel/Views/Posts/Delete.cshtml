@@ -1,0 +1,46 @@
+﻿@model AgenciaCronosPainel.Models.Posts
+
+<h3>Confirma excluir este Post?</h3>
+<div>
+    <h4>Posts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+
+        <dt>
+            @Html.Label("Número")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.Label("Título")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.Label("Descritivo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descritivo)
+        </dd>
+
+       
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

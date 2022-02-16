@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+<br />
+<br />
+
+<section id="loginForm">
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset style="width:350px;">
+            <legend>LOGIN</legend>
+            <br />
+            <table style="width:100%; background-color:#ffffff;">
+                <tr>
+                    <th style="width: 100px; text-align: left; color: #091d5d; background-color:#ffffff;">
+                        @Html.Label("E-mail")
+                    </th>
+                    <th style="width: 100px; text-align: left; color: #091d5d; background-color:#ffffff;">
+                        @Html.Label("Senha")
+                    </th>
+                </tr>
+                <tr>
+                    <td style="width:120px; text-align:left; background-color:#ffffff;">
+                        @Html.TextBox("Email")
+                    </td>
+                    <td style="width:100px; text-align:left; background-color:#ffffff;">
+                        @Html.Password("Password")
+                    </td>
+                </tr>
+            </table>
+            <br />
+
+            <table style="width:100%; background-color:#ffffff;">
+                <tr>
+                    <td style="width:120px; text-align:left; background-color:#ffffff;">
+                        <input type="submit" value="Acesso" />
+                    </td>
+                    <td style="width:120px; text-align:right; background-color:#ffffff;">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        @*<p>
+                @Html.ActionLink("Registre-se", "Register") caso não tenha uma conta.
+            </p>*@
+    }
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

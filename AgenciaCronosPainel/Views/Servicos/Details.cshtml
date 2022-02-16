@@ -1,0 +1,37 @@
+﻿@model AgenciaCronosPainel.Models.Servicos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Serviços</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+        <dt>
+            @Html.Label("Código")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodServico)
+        </dd>
+
+        <dt>
+            @Html.Label("Descrição")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescServico)
+        </dd>
+
+      
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
